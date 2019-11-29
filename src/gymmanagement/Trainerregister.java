@@ -5,8 +5,10 @@
  */
 package gymmanagement;
 
+import static gymmanagement.MainLogin.*;
 import static gymmanagement.TrainerDetails.tr;
 import java.io.File;
+import java.io.FileWriter;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -264,7 +266,6 @@ public class Trainerregister extends javax.swing.JFrame {
                 String contact = contactno.getText().trim();
                 String age = ag.getText().trim();
                 String cpassword = confirmpass.getText().trim();
-                TrainerDetails obj = new TrainerDetails("f", "f", "f", "f", "f", "f", "f");
                 File fd = new File("src/gymmanagement/logintrainer");
                 Scanner scan = new Scanner(fd);
 
@@ -274,6 +275,7 @@ public class Trainerregister extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Enter a valid email Id");
                 } else {
 
+                    TrainerDetails obj = new TrainerDetails(name, username, gen, age, contact, ema, password);
                     int flag = 1;
                     int n = tr.size();
                     for (int i = 0; i < n; i++) {
@@ -288,7 +290,13 @@ public class Trainerregister extends javax.swing.JFrame {
                     if (flag == 1) {
 
                         tr.add(obj);
-//                        trainerL
+                        TrainerL.put(username, password);
+                        TrainerO.put(username, obj);
+                        FileWriter f = new FileWriter("src/gymmanagement/logintrainer", true);
+                        f.write("\n");
+                        int i;
+                        f.append(name + " " + username + " " + gen + " " + age + " " + contact + " " + ema + " " + password + "\n");
+                        f.close();
                         JOptionPane.showMessageDialog(null, "Succesfully Added");
                         new Trainer().setVisible(true);
                         this.dispose();
