@@ -227,7 +227,7 @@ public class MainLogin extends javax.swing.JFrame {
                 if (AdminLogin.isSelected()) {
                     if (AdminL.containsKey(username)) {
                         if (AdminL.get(username).equals(password)) {
-                            new Trainer().setVisible(true);
+                            new AdminFront().setVisible(true);
                         } else {
                             JOptionPane.showMessageDialog(null, "Password Doesn't Match");
                         }
@@ -247,7 +247,7 @@ public class MainLogin extends javax.swing.JFrame {
                 } else if (CustomerLogin.isSelected()) {
                     if (TrainerL.containsKey(username)) {
                         if (TrainerL.get(username).equals(password)) {
-                            new Trainer().setVisible(true);
+//                            new UserFront().setVisible(true);
                         } else {
                             JOptionPane.showMessageDialog(null, "Password Doesn't Match");
                         }
@@ -273,7 +273,9 @@ public class MainLogin extends javax.swing.JFrame {
         GP1.add(AdminLogin);
         GP1.add(TrainerLogin);
         GP1.add(CustomerLogin);
-
+        AdminL.put("admin", "1234");
+        UserLogin.load();
+        
     }//GEN-LAST:event_formWindowOpened
 
     private void AdminLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminLoginActionPerformed

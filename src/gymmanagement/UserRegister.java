@@ -380,7 +380,7 @@ public class UserRegister extends javax.swing.JFrame {
             try
             {
                 //String file=JOptionPane.showInputDialog("Enter file location");
-                FileWriter f=new FileWriter("/Users/aadityagadhave/Desktop/ProjectOOM/OOMC3-Project/src/gymmanagement/UserDetails.txt",true);
+                FileWriter f=new FileWriter("src/gymmanagement/UserDetails.txt",true);
                 //f.write("\n");
 
                 int i;

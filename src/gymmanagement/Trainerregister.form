@@ -45,7 +45,7 @@
                           <Component id="confirmpass" min="-2" pref="296" max="-2" attributes="0"/>
                           <Component id="pass" min="-2" pref="296" max="-2" attributes="0"/>
                           <Component id="email" min="-2" pref="296" max="-2" attributes="0"/>
-                          <Component id="age" alignment="1" min="-2" pref="296" max="-2" attributes="0"/>
+                          <Component id="ag" alignment="1" min="-2" pref="296" max="-2" attributes="0"/>
                           <Component id="contactno" min="-2" pref="296" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -84,7 +84,7 @@
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="age" min="-2" pref="41" max="-2" attributes="0"/>
+                  <Component id="ag" min="-2" pref="41" max="-2" attributes="0"/>
                   <Component id="jLabel9" alignment="1" min="-2" pref="35" max="-2" attributes="0"/>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -210,9 +210,9 @@
         <Property name="text" type="java.lang.String" value="Contact No"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="age">
+    <Component class="javax.swing.JTextField" name="ag">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ageActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="agActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel9">

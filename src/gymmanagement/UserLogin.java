@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package gymmanagement;
+import static gymmanagement.MainLogin.*;
 import static gymmanagement.UserDetails.*;
 import javax.swing.*;
 import java.util.*;
@@ -145,7 +146,7 @@ public class UserLogin extends javax.swing.JFrame {
     
     static void load()
     {
-        File f=new File("/Users/aadityagadhave/Desktop/ProjectOOM/OOMC3-Project/src/gymmanagement/UserDetails.txt");
+        File f=new File("src/gymmanagement/UserDetails.txt");
         
         try
         {
@@ -176,6 +177,8 @@ public class UserLogin extends javax.swing.JFrame {
                 UserDetails us=new UserDetails(names,l,u,g,p,e,ps,t,sl,a,w,h,add);
                 //JOptionPane.showMessageDialog(null,u);
                 user.add(us);
+                CustomerL.put(u,ps);
+                CustomerO.put(u,us);
         
             }
         }

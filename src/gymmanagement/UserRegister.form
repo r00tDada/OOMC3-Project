@@ -98,11 +98,17 @@
                                       <Component id="gender" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="userN" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jScrollPane1" pref="299" max="32767" attributes="0"/>
+<<<<<<< HEAD
                                       <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                                           <Component id="height" alignment="0" pref="96" max="32767" attributes="0"/>
                                           <Component id="weight" alignment="0" max="32767" attributes="0"/>
                                       </Group>
                                       <Component id="memberShip" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
+=======
+                                      <Component id="height" alignment="0" pref="96" max="32767" attributes="0"/>
+                                      <Component id="weight" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="plan" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
+>>>>>>> ec49c4ce8c0ee897a2a7c1e1dc618a51f990070d
                                       <Component id="rePass" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
@@ -172,7 +178,6 @@
                       <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel16" alignment="3" pref="40" max="32767" attributes="0"/>
                   <Component id="trainer" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -200,7 +205,6 @@
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jLabel8" min="-2" pref="38" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
