@@ -274,6 +274,7 @@ public class MainLogin extends javax.swing.JFrame {
         GP1.add(TrainerLogin);
         GP1.add(CustomerLogin);
         AdminL.put("admin", "1234");
+        UserLogin.load();
         
     }//GEN-LAST:event_formWindowOpened
 
