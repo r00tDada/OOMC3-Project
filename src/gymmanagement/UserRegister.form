@@ -12,6 +12,11 @@
         <Property name="text" type="java.lang.String" value="jLabel12"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JTextField" name="jTextField2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jTextField2"/>
+      </Properties>
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -51,8 +56,11 @@
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jLabel10" alignment="0" min="-2" pref="159" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel10" min="-2" pref="159" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
+                          </Group>
                           <Group type="102" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -72,6 +80,8 @@
                                   </Group>
                                   <Component id="jLabel13" max="32767" attributes="0"/>
                                   <Component id="jLabel14" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jLabel15" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jLabel16" alignment="1" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -80,21 +90,25 @@
                           <Component id="first" max="32767" attributes="0"/>
                           <Component id="last" max="32767" attributes="0"/>
                           <Component id="email" max="32767" attributes="0"/>
+                          <Component id="pass" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                       <Component id="age" max="32767" attributes="0"/>
-                                      <Component id="rePass" max="32767" attributes="0"/>
-                                      <Component id="pass" alignment="1" max="32767" attributes="0"/>
                                       <Component id="gender" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="userN" alignment="0" max="32767" attributes="0"/>
                                       <Component id="jScrollPane1" pref="299" max="32767" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="height" alignment="0" pref="96" max="32767" attributes="0"/>
+                                          <Component id="weight" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                      <Component id="plan" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
+                                      <Component id="rePass" alignment="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="height" alignment="0" pref="96" max="32767" attributes="0"/>
-                                      <Component id="weight" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jComboBox2" alignment="0" pref="127" max="32767" attributes="0"/>
+                                      <Component id="jComboBox1" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="plan" alignment="0" min="-2" pref="127" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -145,31 +159,46 @@
                   <Component id="jLabel13" max="32767" attributes="0"/>
                   <Component id="height" pref="38" max="32767" attributes="0"/>
               </Group>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel14" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                  <Component id="plan" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="jLabel15" min="-2" pref="39" max="-2" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jLabel14" min="-2" pref="38" max="-2" attributes="0"/>
-                      <EmptySpace pref="21" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="plan" min="-2" pref="38" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jComboBox1" max="32767" attributes="0"/>
+                      <EmptySpace min="5" pref="5" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jLabel16" alignment="3" pref="40" max="32767" attributes="0"/>
+                  <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="jLabel10" max="32767" attributes="0"/>
                   <Component id="email" pref="38" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="pass" pref="38" max="32767" attributes="0"/>
-                  <Component id="jLabel6" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabel6" min="-2" pref="38" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="pass" min="-2" pref="32" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="rePass" pref="38" max="32767" attributes="0"/>
-                  <Component id="jLabel7" max="32767" attributes="0"/>
+                  <Component id="jLabel7" min="-2" pref="38" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="rePass" max="32767" attributes="0"/>
+                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -272,10 +301,6 @@
     </Component>
     <Component class="javax.swing.JTextField" name="email">
     </Component>
-    <Component class="javax.swing.JTextField" name="pass">
-    </Component>
-    <Component class="javax.swing.JTextField" name="rePass">
-    </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
         <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -325,6 +350,52 @@
     <Component class="javax.swing.JTextField" name="height">
     </Component>
     <Component class="javax.swing.JComboBox" name="plan">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Item 1"/>
+            <StringItem index="1" value="Item 2"/>
+            <StringItem index="2" value="Item 3"/>
+            <StringItem index="3" value="Item 4"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel15">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Slot"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="pass">
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="rePass">
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboBox1">
+      <Properties>
+        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+          <StringArray count="4">
+            <StringItem index="0" value="Item 1"/>
+            <StringItem index="1" value="Item 2"/>
+            <StringItem index="2" value="Item 3"/>
+            <StringItem index="3" value="Item 4"/>
+          </StringArray>
+        </Property>
+      </Properties>
+      <AuxValues>
+        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+      </AuxValues>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel16">
+      <Properties>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Trainer"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JComboBox" name="jComboBox2">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="4">
