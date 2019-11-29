@@ -32,6 +32,7 @@ public class AdminFront extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -132,11 +133,17 @@ public class AdminFront extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1136, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(376, 376, 376)
+                .addComponent(jLabel1)
+                .addContainerGap(760, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 529, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(240, 240, 240)
+                .addComponent(jLabel1)
+                .addContainerGap(289, Short.MAX_VALUE))
         );
 
         pack();
@@ -220,6 +227,7 @@ public class AdminFront extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;

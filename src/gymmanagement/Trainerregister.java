@@ -25,8 +25,8 @@ public class Trainerregister extends javax.swing.JFrame {
     public Trainerregister() {
         initComponents();
          String[] Com = new String[2];
-        Com[0]="male";
-        Com[1]="female";
+        Com[0]="Male";
+        Com[1]="Female";
         combo.setModel(new javax.swing.DefaultComboBoxModel<>(Com));
     }
 

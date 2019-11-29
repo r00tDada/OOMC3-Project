@@ -38,28 +38,20 @@
               <Component id="jLabel4" min="-2" pref="293" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" pref="220" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                      <Component id="jLabel1" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="user" pref="250" max="32767" attributes="0"/>
-                                  <Component id="pass" max="32767" attributes="0"/>
-                              </Group>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Component id="jLabel3" pref="220" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace pref="126" max="32767" attributes="0"/>
-                              <Component id="jLabel2" min="-2" pref="368" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <Component id="jLabel1" max="32767" attributes="0"/>
                           </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="user" pref="250" max="32767" attributes="0"/>
+                          <Component id="pass" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                   </Group>
@@ -67,6 +59,11 @@
                       <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
                       <Component id="jButton1" min="-2" pref="127" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel2" min="-2" pref="277" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="162" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -154,7 +151,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="FreeSans" size="26" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Welcome To Trainer Login"/>
+        <Property name="text" type="java.lang.String" value="Welcome To Cult.fit"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
