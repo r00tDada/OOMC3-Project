@@ -1,2 +1,6 @@
 ds 12
 ds 12
+afd 32
+TredMill 2
+Fans 4
+Dumbles 24
