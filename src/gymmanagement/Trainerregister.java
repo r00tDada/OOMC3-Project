@@ -7,6 +7,7 @@ package gymmanagement;
 
 import static gymmanagement.MainLogin.*;
 import static gymmanagement.TrainerDetails.tr;
+import static gymmanagement.UserDetails.user;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.Scanner;
@@ -169,7 +170,7 @@ public class Trainerregister extends javax.swing.JFrame {
                         .addGap(243, 243, 243)
                         .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(313, 313, 313)
+                        .addGap(312, 312, 312)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(163, Short.MAX_VALUE))
         );
@@ -198,9 +199,9 @@ public class Trainerregister extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(contactno, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -214,9 +215,9 @@ public class Trainerregister extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(confirmpass, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
+                .addGap(44, 44, 44)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addGap(35, 35, 35))
         );
 
         pack();
@@ -251,6 +252,28 @@ public class Trainerregister extends javax.swing.JFrame {
 
         return email.matches(reg);
     }
+
+    static void loadtrainer() {
+        File fd = new File("src/gymmanagement/trainer");
+
+        try {
+            Scanner s = new Scanner(fd);
+            while (s.hasNext()) {
+                String name = s.next();
+                String u = s.next();
+                String g = s.next();
+                String a = s.next();
+                String con = s.next();
+                String em = s.next();
+                String ps = s.next();
+                TrainerDetails td = new TrainerDetails(name, u, g, a, con, em, ps);
+                tr.add(td);
+            }
+        } catch (Exception e) {
+            System.out.println("IO Exception");
+        }
+    }
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
 
@@ -270,7 +293,7 @@ public class Trainerregister extends javax.swing.JFrame {
                 Scanner scan = new Scanner(fd);
 
                 if (!password.equals(cpassword)) {
-                    JOptionPane.showMessageDialog(null, "Password doesnt matches");
+                    JOptionPane.showMessageDialog(null, "Password doesn't matches");
                 } else if (!validate(ema)) {
                     JOptionPane.showMessageDialog(null, "Enter a valid email Id");
                 } else {
@@ -292,11 +315,22 @@ public class Trainerregister extends javax.swing.JFrame {
                         tr.add(obj);
                         TrainerL.put(username, password);
                         TrainerO.put(username, obj);
-                        FileWriter f = new FileWriter("src/gymmanagement/logintrainer", true);
+                        FileWriter f = new FileWriter("src/gymmanagement/trainer", true);
                         f.write("\n");
-                        int i;
                         f.append(name + " " + username + " " + gen + " " + age + " " + contact + " " + ema + " " + password + "\n");
                         f.close();
+                        if (gen.equalsIgnoreCase("male")) {
+                            obj.u1 = 4;
+                            obj.b1 = 4;
+                            obj.u2 = 4;
+                            obj.b2 = 4;
+                        } else {
+                            obj.u1 = 4;
+                            obj.g1 = 4;
+                            obj.u2 = 4;
+                            obj.g2 = 4;
+
+                        }
                         JOptionPane.showMessageDialog(null, "Succesfully Added");
                         new Trainer().setVisible(true);
                         this.dispose();
