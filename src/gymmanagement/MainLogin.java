@@ -6,19 +6,34 @@
 package gymmanagement;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
+import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author sourabh
  */
-public class TrainerLogin extends javax.swing.JFrame {
+public class MainLogin extends javax.swing.JFrame {
 
     /**
      * Creates new form TrainerLogin
      */
-    public TrainerLogin() {
+    public static ArrayList<TrainerDetails> U1 = new ArrayList<TrainerDetails>();
+    public static ArrayList<TrainerDetails> B1 = new ArrayList<TrainerDetails>();
+    public static ArrayList<TrainerDetails> G1 = new ArrayList<TrainerDetails>();
+    public static ArrayList<TrainerDetails> U2 = new ArrayList<TrainerDetails>();
+    public static ArrayList<TrainerDetails> B2 = new ArrayList<TrainerDetails>();
+    public static ArrayList<TrainerDetails> G2 = new ArrayList<TrainerDetails>();
+    public static HashMap<String, String> AdminL = new HashMap<String, String>();
+    public static HashMap<String, String> TrainerL = new HashMap<String, String>();
+    public static HashMap<String, String> CustomerL = new HashMap<String, String>();
+    public static HashMap<String, TrainerDetails> TrainerO = new HashMap<>();
+    public static HashMap<String, UserDetails> CustomerO = new HashMap<>();
+
+    public MainLogin() {
         initComponents();
     }
 
@@ -41,10 +56,18 @@ public class TrainerLogin extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         pass = new javax.swing.JPasswordField();
+        AdminLogin = new javax.swing.JRadioButton();
+        TrainerLogin = new javax.swing.JRadioButton();
+        CustomerLogin = new javax.swing.JRadioButton();
 
         jCheckBox1.setText("jCheckBox1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jButton1.setText("Login");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -86,6 +109,23 @@ public class TrainerLogin extends javax.swing.JFrame {
             }
         });
 
+        AdminLogin.setSelected(true);
+        AdminLogin.setText("Admin");
+        AdminLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AdminLoginActionPerformed(evt);
+            }
+        });
+
+        TrainerLogin.setText("Trainer");
+
+        CustomerLogin.setText("Customer");
+        CustomerLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CustomerLoginActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -112,16 +152,26 @@ public class TrainerLogin extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(71, 71, 71))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(182, 182, 182)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(144, 144, 144))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(AdminLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(TrainerLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(CustomerLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(206, 206, 206))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(238, 238, 238)))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -136,13 +186,18 @@ public class TrainerLogin extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pass, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE))
-                .addGap(30, 30, 30)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AdminLogin)
+                    .addComponent(TrainerLogin)
+                    .addComponent(CustomerLogin))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
-                .addGap(24, 24, 24))
+                .addGap(18, 18, 18))
             .addGroup(layout.createSequentialGroup()
                 .addGap(106, 106, 106)
                 .addComponent(jLabel4)
@@ -169,24 +224,38 @@ public class TrainerLogin extends javax.swing.JFrame {
             try {
                 String username = user.getText().trim();
                 String password = pass.getText().trim();
-                File fd = new File("src/gymmanagement/logintrainer");
-                Scanner scan = new Scanner(fd);
-                int n = scan.nextInt();
-                int flag=0;
-                for (int i = 0; i < n; i++) {
-                    String un = scan.next();
-                    String ps = scan.next();
-                    if (un.equals(username) && ps.equals(password)) {
-                        flag=1;
-                    }
-                }
-                if(flag==1){
+                if (AdminLogin.isSelected()) {
+                    if (AdminL.containsKey(username)) {
+                        if (AdminL.get(username).equals(password)) {
                             new Trainer().setVisible(true);
-                }
-                else
-                {
-                    JOptionPane.showMessageDialog(null, "Enter username or password is wrong");
-                }
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Password Doesn't Match");
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No Such Username Exist");
+                    }
+                } else if (TrainerLogin.isSelected()) {
+                    if (TrainerL.containsKey(username)) {
+                        if (TrainerL.get(username).equals(password)) {
+                            new Trainer().setVisible(true);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Password Doesn't Match");
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No Such Username Exist");
+                    }
+                } else if (CustomerLogin.isSelected()) {
+                    if (TrainerL.containsKey(username)) {
+                        if (TrainerL.get(username).equals(password)) {
+                            new Trainer().setVisible(true);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Password Doesn't Match");
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No Such Username Exist");
+                    }
+
+                }                
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e.getMessage());
@@ -197,6 +266,23 @@ public class TrainerLogin extends javax.swing.JFrame {
     private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        ButtonGroup GP1 = new ButtonGroup();
+        GP1.add(AdminLogin);
+        GP1.add(TrainerLogin);
+        GP1.add(CustomerLogin);
+
+    }//GEN-LAST:event_formWindowOpened
+
+    private void AdminLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AdminLoginActionPerformed
+
+    private void CustomerLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CustomerLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CustomerLoginActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,26 +301,32 @@ public class TrainerLogin extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TrainerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TrainerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TrainerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TrainerLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TrainerLogin().setVisible(true);
+                new MainLogin().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton AdminLogin;
+    private javax.swing.JRadioButton CustomerLogin;
+    private javax.swing.JRadioButton TrainerLogin;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
