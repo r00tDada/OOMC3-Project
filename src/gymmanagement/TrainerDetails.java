@@ -14,7 +14,7 @@ import java.util.*;
  */
 public class TrainerDetails {
 
-    static void delete(String name) {
+    static void deletetrainer(String name) {
         if (TrainerL.containsKey(name)) {
             TrainerL.remove(name);
             TrainerO.remove(name);
