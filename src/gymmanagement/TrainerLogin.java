@@ -168,7 +168,7 @@ public class TrainerLogin extends javax.swing.JFrame {
             try {
                 String username = user.getText().trim();
                 String password = pass.getText().trim();
-                File fd = new File("/home/sourabh/Desktop/GymManagement/src/gymmanagement/logintrainer");
+                File fd = new File("src/gymmanagement/logintrainer");
                 Scanner scan = new Scanner(fd);
                 int n = scan.nextInt();
                 int flag=0;
