@@ -141,56 +141,67 @@ public class UserLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_userNameActionPerformed
     
-    void load()
+    static void load()
     {
-        File f=new File("/Users/aadityagadhave/Desktop/ProjectOOM/GymManagement/GymManagement/src/gymmanagement/UserDetails.txt");
+        File f=new File("/Users/aadityagadhave/Desktop/ProjectOOM/OOMC3-Project/src/gymmanagement/UserDetails.txt");
         
         try
         {
             Scanner s=new Scanner(f);
+            //JOptionPane.showMessageDialog(null,"hey");
             
-            while(s.hasNextLine())
+//            if(f==null)
+//                System.out.println("heya");
+                
+            while(s.hasNext())
             {
                 String names=s.next();
-                String userName=s.next();
-                String password=s.next();
-                String gender=s.next();
-                int age=s.nextInt();
-                String address=s.next();
-
+                String l=s.next();
+                String u=s.next();
+                String g=s.next();
+                String p=s.next();
+                String e=s.next();
+                String ps=s.next();
+                int a=s.nextInt();
+                int w=s.nextInt();
+                int h=s.nextInt();
+                String add=s.next();
+      
                 //UserDetails us=new UserDetails(names,userName,password,gender,age,address);
-
-                //user.add(us);
+                //JOptionPane.showMessageDialog(null,u);
+                UserDetails us=new UserDetails(names,l,u,g,p,e,ps,a,w,h,add);
+                //JOptionPane.showMessageDialog(null,u);
+                user.add(us);
+        
             }
-            
         }
         catch(Exception e)
         {
-            System.out.println(e.getMessage());
+            System.out.println("Heyaaa");
         }
     }
     
     int verify(String userName,String pass)
     {
         int i,flg=0;
-        
-//        for(i=0;i<user.size();i++)
-//        {
-//            UserDetails us=user.get(i);
-//            
-//            if(us.getUserName().equals(userName))
-//            {
-//                flg=1;
-//                
-//                if(us.getPassword().equals(pass))
-//                {
-//                    flg=2;
-//                    break;
-//                }
-//                
-//                break;
-//            }
-//        }
+        //JOptionPane.showMessageDialog(null,user.size());
+        for(i=0;i<user.size();i++)
+        {
+            UserDetails us=user.get(i);
+            JOptionPane.showMessageDialog(null,us.getUs());
+            if(us.getUs().equals(userName))
+            {
+                flg=1;
+                JOptionPane.showMessageDialog(null,us.getPassword());
+                if(us.getPassword().equals(pass))
+                {
+                    flg=2;
+                    break;
+                }
+                
+                break;
+            }
+        }
         
         return flg;
     }
@@ -225,8 +236,7 @@ public class UserLogin extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
-        
-        Register r=new Register();
+        UserRegister r=new UserRegister();
         r.setVisible(true);
         r.pack();
         r.setLocationRelativeTo(null);
