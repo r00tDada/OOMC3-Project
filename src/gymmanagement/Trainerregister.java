@@ -289,7 +289,7 @@ public class Trainerregister extends javax.swing.JFrame {
                 String contact = contactno.getText().trim();
                 String age = ag.getText().trim();
                 String cpassword = confirmpass.getText().trim();
-                File fd = new File("src/gymmanagement/logintrainer");
+                File fd = new File("src/gymmanagement/trainer");
                 Scanner scan = new Scanner(fd);
 
                 if (!password.equals(cpassword)) {
@@ -324,11 +324,20 @@ public class Trainerregister extends javax.swing.JFrame {
                             obj.b1 = 4;
                             obj.u2 = 4;
                             obj.b2 = 4;
+                            U1.add(obj);
+                            B1.add(obj);
+                            B2.add(obj);
+                            U2.add(obj);
+                            
                         } else {
                             obj.u1 = 4;
                             obj.g1 = 4;
                             obj.u2 = 4;
                             obj.g2 = 4;
+                            U1.add(obj);
+                            G1.add(obj);
+                            G2.add(obj);
+                            U2.add(obj);
 
                         }
                         JOptionPane.showMessageDialog(null, "Succesfully Added");
