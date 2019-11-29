@@ -5,6 +5,7 @@
  */
 package gymmanagement;
 
+import static gymmanagement.TrainerDetails.tr;
 import java.io.File;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
@@ -46,7 +47,7 @@ public class Trainerregister extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        age = new javax.swing.JTextField();
+        ag = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         contactno = new javax.swing.JTextField();
 
@@ -120,9 +121,9 @@ public class Trainerregister extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Contact No");
 
-        age.addActionListener(new java.awt.event.ActionListener() {
+        ag.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ageActionPerformed(evt);
+                agActionPerformed(evt);
             }
         });
 
@@ -160,7 +161,7 @@ public class Trainerregister extends javax.swing.JFrame {
                             .addComponent(confirmpass, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pass, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ag, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(contactno, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(243, 243, 243)
@@ -189,7 +190,7 @@ public class Trainerregister extends javax.swing.JFrame {
                     .addComponent(gender, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ag, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -243,35 +244,59 @@ public class Trainerregister extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_passActionPerformed
 
+    boolean validate(String email) {
+        String reg = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+
+        return email.matches(reg);
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        if (nam.getText().isEmpty() || user.getText().isEmpty() || gender.getText().isEmpty() || email.getText().isEmpty() || confirmpass.getText().isEmpty() || pass.getText().isEmpty()) {
+
+        if (nam.getText().isEmpty() || user.getText().isEmpty() || gender.getText().isEmpty() || ag.getText().isEmpty() || contactno.getText().isEmpty() || email.getText().isEmpty() || confirmpass.getText().isEmpty() || pass.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please enter all fields");
         } else {
             try {
                 String name = nam.getText().trim();
                 String username = user.getText().trim();
                 String gen = gender.getText().trim();
-                String contact= email.getText().trim();
+                String ema = email.getText().trim();
                 String password = pass.getText().trim();
-                String cpassword= confirmpass.getText().trim();         
+                String contact = contactno.getText().trim();
+                String age = ag.getText().trim();
+                String cpassword = confirmpass.getText().trim();
+                TrainerDetails obj = new TrainerDetails("f", "f", "f", "f", "f", "f", "f");
                 File fd = new File("src/gymmanagement/logintrainer");
                 Scanner scan = new Scanner(fd);
-                int n = scan.nextInt();
-                int flag = 0;
-                for (int i = 0; i < n; i++) {
-                    String un = scan.next();
-                    String ps = scan.next();
-                    if (un.equals(username) && ps.equals(password)) {
-                        flag = 1;
+
+                if (!password.equals(cpassword)) {
+                    JOptionPane.showMessageDialog(null, "Password doesnt matches");
+                } else if (!validate(ema)) {
+                    JOptionPane.showMessageDialog(null, "Enter a valid email Id");
+                } else {
+
+                    int flag = 1;
+                    int n = tr.size();
+                    for (int i = 0; i < n; i++) {
+
+                        if (tr.get(i).getUsername().equals(username)) {
+                            flag = 0;
+                            JOptionPane.showMessageDialog(null, "Username already exists Please enter the username again");
+                            break;
+
+                        }
+                    }
+                    if (flag == 1) {
+
+                        tr.add(obj);
+//                        trainerL
+                        JOptionPane.showMessageDialog(null, "Succesfully Added");
+                        new Trainer().setVisible(true);
+                        this.dispose();
+
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Enter username or password is wrong");
                     }
                 }
-                if (flag == 1) {
-                    new Trainer().setVisible(true);
-                } else {
-                    JOptionPane.showMessageDialog(null, "Enter username or password is wrong");
-                }
-
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e.getMessage());
             }
@@ -279,9 +304,9 @@ public class Trainerregister extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void ageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageActionPerformed
+    private void agActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ageActionPerformed
+    }//GEN-LAST:event_agActionPerformed
 
     private void contactnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactnoActionPerformed
         // TODO add your handling code here:
@@ -323,7 +348,7 @@ public class Trainerregister extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField age;
+    private javax.swing.JTextField ag;
     private javax.swing.JTextField confirmpass;
     private javax.swing.JTextField contactno;
     private javax.swing.JTextField email;
