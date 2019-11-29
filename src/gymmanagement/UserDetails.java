@@ -18,21 +18,39 @@ public class UserDetails {
 
     static ArrayList<UserDetails>user=new ArrayList<UserDetails>();
     
-    private String name,last,us,gender,plan,email,password,address;
+    private String name,last,us,gender,memberShip,email,password,address,train,sl;
     private int age,weight,height;
 
-    public UserDetails(String name, String last, String us, String gender, String plan, String email, String password, int age, int weight, int height,String address) {
+    public UserDetails(String name, String last, String us, String gender, String memberShip, String email, String password, String train,String sl,int age, int weight, int height,String address) {
         this.name = name;
         this.last = last;
         this.us = us;
         this.gender = gender;
-        this.plan = plan;
+        this.memberShip = memberShip;
         this.email = email;
         this.password = password;
         this.address = address;
         this.age = age;
         this.weight = weight;
         this.height = height;
+        this.train=train;
+        this.sl=sl;
+    }
+
+    public String getTrain() {
+        return train;
+    }
+
+    public void setTrain(String train) {
+        this.train = train;
+    }
+
+    public String getSl() {
+        return sl;
+    }
+
+    public void setSl(String sl) {
+        this.sl = sl;
     }
 
     
@@ -73,11 +91,11 @@ public class UserDetails {
     }
 
     public String getPlan() {
-        return plan;
+        return memberShip;
     }
 
-    public void setPlan(String plan) {
-        this.plan = plan;
+    public void setPlan(String memberShip) {
+        this.memberShip = memberShip;
     }
 
     public String getEmail() {

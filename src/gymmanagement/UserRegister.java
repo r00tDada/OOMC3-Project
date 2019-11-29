@@ -35,7 +35,7 @@ public class UserRegister extends javax.swing.JFrame {
         str1[0]="0";
         str1[1]="1";
         str1[2]="3";
-        plan.setModel(new javax.swing.DefaultComboBoxModel<>(str1));
+        memberShip.setModel(new javax.swing.DefaultComboBoxModel<>(str1));
     }
 
     /**
@@ -74,13 +74,13 @@ public class UserRegister extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         height = new javax.swing.JTextField();
-        plan = new javax.swing.JComboBox<>();
+        memberShip = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
         pass = new javax.swing.JPasswordField();
         rePass = new javax.swing.JPasswordField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        slot = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        trainer = new javax.swing.JComboBox<>();
 
         jTextField1.setText("jTextField1");
 
@@ -126,6 +126,12 @@ public class UserRegister extends javax.swing.JFrame {
             }
         });
 
+        age.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ageActionPerformed(evt);
+            }
+        });
+
         gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         address.setColumns(20);
@@ -152,19 +158,19 @@ public class UserRegister extends javax.swing.JFrame {
         jLabel13.setText("Height");
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Plan");
+        jLabel14.setText("MemberShip");
 
-        plan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        memberShip.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Slot");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        slot.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("Trainer");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        trainer.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -221,11 +227,11 @@ public class UserRegister extends javax.swing.JFrame {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                             .addComponent(height, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 96, Short.MAX_VALUE)
                                             .addComponent(weight, javax.swing.GroupLayout.Alignment.LEADING))
-                                        .addComponent(plan, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(memberShip, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(rePass))
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.LEADING, 0, 127, Short.MAX_VALUE)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addComponent(trainer, javax.swing.GroupLayout.Alignment.LEADING, 0, 127, Short.MAX_VALUE)
+                                        .addComponent(slot, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
@@ -265,17 +271,17 @@ public class UserRegister extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(plan, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(memberShip, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jComboBox1)
+                        .addComponent(slot)
                         .addGap(5, 5, 5)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(trainer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -339,7 +345,9 @@ public class UserRegister extends javax.swing.JFrame {
         String g=(String)gender.getSelectedItem();
         int w=Integer.parseInt(weight.getText());
         int h=Integer.parseInt(height.getText());
-        String p=(String)plan.getSelectedItem();
+        String p=(String)memberShip.getSelectedItem();
+        String s=(String)slot.getSelectedItem();
+        String t=(String)trainer.getSelectedItem();
         String e=email.getText();
         String ps=pass.getText();
         String rps=rePass.getText();
@@ -367,7 +375,7 @@ public class UserRegister extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null,"Succesfully Added");
             
-            UserDetails us=new UserDetails(name,l,u,g,p,e,ps,a,w,h,add);
+            UserDetails us=new UserDetails(name,l,u,g,p,e,ps,t,s,a,w,h,add);
             
             try
             {
@@ -377,7 +385,7 @@ public class UserRegister extends javax.swing.JFrame {
 
                 int i;
                 
-                f.append(name+" "+l+" "+u+" "+g+" "+p+" "+e+" "+ps+" "+a+" "+w+" "+h+" "+add+"\n");
+                f.append(name+" "+l+" "+u+" "+g+" "+p+" "+e+" "+ps+" "+t+" "+s+" "+a+" "+w+" "+h+" "+add+"\n");
                 
                 f.close();
 
@@ -400,6 +408,10 @@ public class UserRegister extends javax.swing.JFrame {
     private void weightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_weightActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_weightActionPerformed
+
+    private void ageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ageActionPerformed
 
     /**
      * @param args the command line arguments
@@ -445,8 +457,6 @@ public class UserRegister extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> gender;
     private javax.swing.JTextField height;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -467,9 +477,11 @@ public class UserRegister extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField last;
+    private javax.swing.JComboBox<String> memberShip;
     private javax.swing.JPasswordField pass;
-    private javax.swing.JComboBox<String> plan;
     private javax.swing.JPasswordField rePass;
+    private javax.swing.JComboBox<String> slot;
+    private javax.swing.JComboBox<String> trainer;
     private javax.swing.JTextField userN;
     private javax.swing.JTextField weight;
     // End of variables declaration//GEN-END:variables

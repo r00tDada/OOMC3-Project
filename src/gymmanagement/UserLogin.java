@@ -141,6 +141,8 @@ public class UserLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_userNameActionPerformed
     
+    static UserDetails us;
+    
     static void load()
     {
         File f=new File("/Users/aadityagadhave/Desktop/ProjectOOM/OOMC3-Project/src/gymmanagement/UserDetails.txt");
@@ -162,6 +164,8 @@ public class UserLogin extends javax.swing.JFrame {
                 String p=s.next();
                 String e=s.next();
                 String ps=s.next();
+                String t=s.next();
+                String sl=s.next();
                 int a=s.nextInt();
                 int w=s.nextInt();
                 int h=s.nextInt();
@@ -169,7 +173,7 @@ public class UserLogin extends javax.swing.JFrame {
       
                 //UserDetails us=new UserDetails(names,userName,password,gender,age,address);
                 //JOptionPane.showMessageDialog(null,u);
-                UserDetails us=new UserDetails(names,l,u,g,p,e,ps,a,w,h,add);
+                UserDetails us=new UserDetails(names,l,u,g,p,e,ps,t,sl,a,w,h,add);
                 //JOptionPane.showMessageDialog(null,u);
                 user.add(us);
         
@@ -205,6 +209,22 @@ public class UserLogin extends javax.swing.JFrame {
         
         return flg;
     }
+    
+    UserDetails get(String userName)
+    {
+        int i,flg=0;
+        //JOptionPane.showMessageDialog(null,user.size());
+        for(i=0;i<user.size();i++)
+        {
+            UserDetails us=user.get(i);
+            JOptionPane.showMessageDialog(null,us.getUs());
+            if(us.getUs().equals(userName))        
+                return us;    
+        }
+        
+        return null;
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String user=userName.getText();
@@ -223,7 +243,13 @@ public class UserLogin extends javax.swing.JFrame {
         }
         else
         {
+            us=get(user);
             
+            UserForm r=new UserForm();
+            r.setVisible(true);
+            r.pack();
+            r.setLocationRelativeTo(null);
+            this.dispose();
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
