@@ -16,6 +16,7 @@ public class TrainerDetails {
     static ArrayList<TrainerDetails> tr = new ArrayList<TrainerDetails>();
 
     private String name, username, gender, age, contactno, email, password;
+    public int u1=0,b1=0,g1=0,u2=0,b2=0,g2=0;
 
     public TrainerDetails(String name, String username, String gender, String age, String contactno, String email, String password) {
         this.name = name;

@@ -13,12 +13,17 @@ public class GymManagement {
 
     /**
      * @param args the command line arguments
-     */    
+     */
+    static TrainerDetails T = null;
+    static UserDetails U = null;
+
     public static void main(String[] args) {
         // TODO code application logic here
 
+
               new MainLogin().setVisible(true);
 
+
     }
-    
+
 }
