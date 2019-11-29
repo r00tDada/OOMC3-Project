@@ -5,6 +5,11 @@
  */
 package gymmanagement;
 
+import static gymmanagement.Equipment.EList;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+
 /**
  *
  * @author harsh
@@ -144,6 +149,20 @@ public class AdminFront extends javax.swing.JFrame {
 
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+        JFrame f = new JFrame();
+        String data[][] = new String [EList.size()][2];
+        for(int i=0;i<EList.size();i++){
+            data[i][0]=EList.get(i).name;
+            data[i][1]=Integer.toString(EList.get(i).getQuantity());
+        }
+        String column[] = {"Name", "Quantity"};
+        JTable jt = new JTable(data, column);
+        jt.setBounds(30, 40, 200, 300);
+        JScrollPane sp = new JScrollPane(jt);
+        f.add(sp);
+        
+        f.setSize(300, 200);
+        f.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
