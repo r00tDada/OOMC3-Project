@@ -89,11 +89,33 @@ public class DeleteUser extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    int delete(String u)
+    {
+        int i;
+        
+        for(i=0;i<user.size();i++)
+        {
+            if(user.get(i).getUs().equals(u))
+            {
+                user.remove(i);
+                return 1;
+            }
+        }
+        
+        return 0;
+    }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
+        String u=userName.getText();
         
+        int m=delete(u);
+        
+        if(m==0)
+            JOptionPane.showMessageDialog(null, "No Such Username Exist");
+        else
+            JOptionPane.showMessageDialog(null, "Deleted Successfully");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
