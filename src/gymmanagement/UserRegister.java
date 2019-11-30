@@ -28,6 +28,14 @@ public class UserRegister extends javax.swing.JFrame {
         initComponents();
         
         gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Male","Female"}));
+        String str3[]=new String[3];
+        
+        str3[0]="Basic";
+        str3[2]="Mega";
+        str3[1]="Mid";
+        
+        memberShip.setModel(new javax.swing.DefaultComboBoxModel<>(str3));
+        
         func();
     }
     
@@ -74,10 +82,7 @@ public class UserRegister extends javax.swing.JFrame {
             }
             
         }
-       
-        
-        
-        
+      
         String[] str1=str;
         trainer.setModel(new javax.swing.DefaultComboBoxModel<>(str1));
     }
@@ -569,7 +574,7 @@ public class UserRegister extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ageActionPerformed
 
-<<<<<<< HEAD
+
     private void slotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_slotActionPerformed
         // TODO add your handling code here:
         if(slot.getSelectedIndex()==0){
@@ -610,11 +615,11 @@ public class UserRegister extends javax.swing.JFrame {
         func();
         
     }//GEN-LAST:event_slotActionPerformed
-=======
+
     private void genderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_genderActionPerformed
->>>>>>> 3f7698aa95a38177f8285ee37c5e50a0ffd781ae
+
 
     /**
      * @param args the command line arguments
