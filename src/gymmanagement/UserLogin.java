@@ -173,10 +173,13 @@ public class UserLogin extends javax.swing.JFrame {
                 int w=a=Integer.parseInt(input[10]);
                 int h=a=Integer.parseInt(input[11]);
                 String add=input[12];
-      
+                
                 //UserDetails us=new UserDetails(names,userName,password,gender,age,address);
                 //JOptionPane.showMessageDialog(null,u);
                 UserDetails uss=new UserDetails(names,l,u,g,p,e,ps,t,sl,a,w,h,add);
+                uss.setAssT(TrainerO.get(t));
+                TrainerO.get(t).Cust.put(u,uss);
+                System.out.println("Asd"+uss.getAssT()+" "+t);
                 //JOptionPane.showMessageDialog(null,u);
                 user.add(uss);
                 CustomerL.put(u,ps);

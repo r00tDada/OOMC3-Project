@@ -8,6 +8,7 @@ package gymmanagement;
 import static gymmanagement.Equipment.EList;
 import static gymmanagement.MainLogin.*;
 import static gymmanagement.TrainerDetails.*;
+import static gymmanagement.GymManagement.*;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
@@ -129,6 +130,11 @@ public class AdminFront extends javax.swing.JFrame {
         jMenu4.setText("Customer");
 
         jMenuItem7.setText("View Customer");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem7);
 
         jMenuItem9.setText("Add");
@@ -236,13 +242,27 @@ public class AdminFront extends javax.swing.JFrame {
         // TODO add your handling code here:
          String n= JOptionPane.showInputDialog("Please enter the Username of the trainer");
         if(TrainerL.containsKey(n)){
-             
+             T=TrainerO.get(n);
+             new Trainer().setVisible(true);
             JOptionPane.showMessageDialog(null,"Search Successfully");
         }
         else{
             JOptionPane.showMessageDialog(null,"Trainer with this username doesn't exists");
         }
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+         String n= JOptionPane.showInputDialog("Please enter the Username of the trainer");
+        if(CustomerL.containsKey(n)){
+             U=CustomerO.get(n);
+             new UserForm().setVisible(true);
+            JOptionPane.showMessageDialog(null,"Search Successfully");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Customer with this username doesn't exists");
+        }
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     /**
      * @param args the command line arguments

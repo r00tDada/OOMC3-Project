@@ -269,6 +269,27 @@ public class Trainerregister extends javax.swing.JFrame {
                 
                 TrainerL.put(use,ps);
                 TrainerO.put(use,obj);
+                if (gen.equalsIgnoreCase("male")) {
+                            obj.u1 = 4;
+                            obj.b1 = 4;
+                            obj.u2 = 4;
+                            obj.b2 = 4;
+                            U1.add(obj);
+                            B1.add(obj);
+                            B2.add(obj);
+                            U2.add(obj);
+                            
+                        } else {
+                            obj.u1 = 4;
+                            obj.g1 = 4;
+                            obj.u2 = 4;
+                            obj.g2 = 4;
+                            U1.add(obj);
+                            G1.add(obj);
+                            G2.add(obj);
+                            U2.add(obj);
+
+                        }
                 
             }
         } catch (Exception e) {

@@ -8,6 +8,7 @@ import static gymmanagement.MainLogin.*;
 import static gymmanagement.MainLogin.U1;
 import static gymmanagement.UserDetails.*;
 import static gymmanagement.UserLogin.*;
+import static gymmanagement.GymManagement.*;
 import javax.swing.*;
 import java.util.*;
 import java.lang.*;
@@ -23,6 +24,14 @@ public class ChangePlanUser extends javax.swing.JFrame {
      */
     public ChangePlanUser() {
         initComponents();
+        
+        String str3[]=new String[3];
+        
+        str3[0]="Basic";
+        str3[1]="Mid";
+        str3[2]="Mega";
+        
+         pl.setModel(new javax.swing.DefaultComboBoxModel<>(str3));
     }
 
     /**
@@ -44,7 +53,7 @@ public class ChangePlanUser extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("cult.fit");
 
-        jLabel2.setText("Chnage Plan To");
+        jLabel2.setText("Change Membership To");
 
         pl.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -69,7 +78,7 @@ public class ChangePlanUser extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(pl, 0, 210, Short.MAX_VALUE)))
+                        .addComponent(pl, 0, 216, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(136, 136, 136)
@@ -99,21 +108,22 @@ public class ChangePlanUser extends javax.swing.JFrame {
         String plan=(String)pl.getSelectedItem();
         
         int i;
+        U.setMemberShip(plan);
+//        for(i=0;i<user.size();i++)
+//        {
+//            if(us.getUs().equals(user.get(i).getUs()))
+//            {
+//                user.get(i).setPlan(plan);
+//                break;
+//            }
+//        }
         
-        for(i=0;i<user.size();i++)
-        {
-            if(us.getUs().equals(user.get(i).getUs()))
-            {
-                user.get(i).setPlan(plan);
-                break;
-            }
-        }
         
         
         UserForm r=new UserForm();
         r.setVisible(true);
         r.pack();
-        r.setLocationRelativeTo(null);
+        r.setLocationRelativeTo(null);  
         this.dispose();
         //this.dispose();
         

@@ -20,6 +20,23 @@ public class UserDetails {
     
     private String name,last,us,gender,memberShip,email,password,address,train,sl,plan="Do Something";
     private int age,weight,height;
+    private TrainerDetails assT=null;
+    private int ch=1;
+
+    public int getCh() {
+        return ch;
+    }
+
+    public void setCh(int ch) {
+        this.ch = ch;
+    }
+    public TrainerDetails getAssT() {
+        return assT;
+    }
+
+    public void setAssT(TrainerDetails assT) {
+        this.assT = assT;
+    }
 
     public String getPlan() {
         return plan;

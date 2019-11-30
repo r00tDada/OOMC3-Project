@@ -275,7 +275,7 @@ public class Trainer extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String namecus = JOptionPane.showInputDialog("Please enter the name of the customer whose plan to be searched");
-            obj = CustomerO.get(namecus);
+            obj = T.Cust.get(namecus);
             String ans = "";
             ans += obj.getPlan();
             box.setText(ans);
