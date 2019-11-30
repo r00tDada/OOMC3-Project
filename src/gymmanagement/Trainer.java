@@ -67,6 +67,7 @@ public class Trainer extends javax.swing.JFrame {
             }
         });
 
+        name.setEditable(false);
         name.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nameActionPerformed(evt);
@@ -93,6 +94,7 @@ public class Trainer extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Age");
 
+        gender.setEditable(false);
         gender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 genderActionPerformed(evt);
@@ -105,6 +107,7 @@ public class Trainer extends javax.swing.JFrame {
             }
         });
 
+        user.setEditable(false);
         user.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 userActionPerformed(evt);
@@ -246,7 +249,7 @@ public class Trainer extends javax.swing.JFrame {
 
     private void nameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameActionPerformed
         // TODO add your handling code here:
-
+        
 
     }//GEN-LAST:event_nameActionPerformed
 
@@ -280,12 +283,21 @@ public class Trainer extends javax.swing.JFrame {
             box.setText(ans);
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
+            JOptionPane.showMessageDialog(null, "Exception occur");
         }
     }//GEN-LAST:event_searchcustomerActionPerformed
-
+    
     private void edittrainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_edittrainActionPerformed
         // TODO add your handling code here:
+         try {
+             T.setAge(ag.getText().trim());
+             T.setContactNo(contact.getText().trim());
+             T.setEmail(email.getText().trim());
+             JOptionPane.showMessageDialog(null, "Successfully edit");
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Exception occur");
+        }
 
     }//GEN-LAST:event_edittrainActionPerformed
 
