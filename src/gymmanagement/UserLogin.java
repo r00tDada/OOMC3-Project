@@ -142,7 +142,7 @@ public class UserLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_userNameActionPerformed
     
-    static UserDetails us;
+    public static UserDetails us;
     
     static void load()
     {
@@ -156,35 +156,37 @@ public class UserLogin extends javax.swing.JFrame {
 //            if(f==null)
 //                System.out.println("heya");
                 
-            while(s.hasNext())
+            while(s.hasNextLine())
             {
-                String names=s.next();
-                String l=s.next();
-                String u=s.next();
-                String g=s.next();
-                String p=s.next();
-                String e=s.next();
-                String ps=s.next();
-                String t=s.next();
-                String sl=s.next();
-                int a=s.nextInt();
-                int w=s.nextInt();
-                int h=s.nextInt();
-                String add=s.next();
+                String d=s.nextLine();
+                String [] input=d.split(" ");
+                String names=input[0];
+                String l=input[1];
+                String u=input[2];
+                String g=input[3];
+                String p=input[4];
+                String e=input[5];
+                String ps=input[6];
+                String t=input[7];
+                String sl=input[8];
+                int a=Integer.parseInt(input[9]);
+                int w=a=Integer.parseInt(input[10]);
+                int h=a=Integer.parseInt(input[11]);
+                String add=input[12];
       
                 //UserDetails us=new UserDetails(names,userName,password,gender,age,address);
                 //JOptionPane.showMessageDialog(null,u);
-                UserDetails us=new UserDetails(names,l,u,g,p,e,ps,t,sl,a,w,h,add);
+                UserDetails uss=new UserDetails(names,l,u,g,p,e,ps,t,sl,a,w,h,add);
                 //JOptionPane.showMessageDialog(null,u);
-                user.add(us);
+                user.add(uss);
                 CustomerL.put(u,ps);
-                CustomerO.put(u,us);
+                CustomerO.put(u,uss);
         
             }
         }
         catch(Exception e)
         {
-            System.out.println("Heyaaa");
+            System.out.println(e.getMessage());
         }
     }
     

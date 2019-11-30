@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package gymmanagement;
+import static gymmanagement.GymManagement.U;
 import static gymmanagement.UserDetails.*;
 import static gymmanagement.UserLogin.*;
 import javax.swing.*;
@@ -150,6 +151,11 @@ public class UserForm extends javax.swing.JFrame {
         });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("MemberShip");
@@ -408,6 +414,22 @@ public class UserForm extends javax.swing.JFrame {
         r.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        fname.setText(U.getName());
+        lname.setText(U.getLast());
+        uname.setText(U.getUs());
+        uage.setText(String.valueOf(U.getAge()));
+        ugender.setText(U.getGender());
+        uweight.setText(String.valueOf(U.getWeight()));
+        uheight.setText(String.valueOf(U.getHeight()));
+        uplan.setText(U.getMemberShip());
+        uslot.setText(U.getSl());
+        utrainer.setText(U.getTrain());
+        uemail.setText(U.getEmail());
+        uaddress.setText(U.getAddress());
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
