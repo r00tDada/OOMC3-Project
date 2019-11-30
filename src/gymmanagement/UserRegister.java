@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 package gymmanagement;
+import static gymmanagement.MainLogin.CustomerL;
+import static gymmanagement.MainLogin.CustomerO;
 import static gymmanagement.UserDetails.*;
 import static gymmanagement.UserLogin.*;
 import javax.swing.*;
@@ -427,11 +429,10 @@ public class UserRegister extends javax.swing.JFrame {
             {
                 JOptionPane.showMessageDialog(null, em.getMessage());
             }  
+                CustomerL.put(u,ps);
+                CustomerO.put(u,us);
                 this.dispose();
-                UserLogin r=new UserLogin();
-                r.setVisible(true);
-                r.pack();
-                r.setLocationRelativeTo(null);
+                
 
             }
         

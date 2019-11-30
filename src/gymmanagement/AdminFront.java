@@ -101,6 +101,11 @@ public class AdminFront extends javax.swing.JFrame {
         jMenu3.setText("Trainer");
 
         jMenuItem5.setText("ViewTrainer");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem5);
 
         jMenuItem6.setText("Add");
@@ -226,6 +231,18 @@ public class AdminFront extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Trainer with this username doesn't exists");
         }
     }//GEN-LAST:event_jMenuItem8ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        // TODO add your handling code here:
+         String n= JOptionPane.showInputDialog("Please enter the Username of the trainer");
+        if(TrainerL.containsKey(n)){
+             
+            JOptionPane.showMessageDialog(null,"Search Successfully");
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Trainer with this username doesn't exists");
+        }
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments

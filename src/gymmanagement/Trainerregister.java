@@ -249,16 +249,27 @@ public class Trainerregister extends javax.swing.JFrame {
 
         try {
             Scanner s = new Scanner(fd);
-            while (s.hasNext()) {
-                String name = s.next();
-                String u = s.next();
-                String g = s.next();
-                String a = s.next();
-                String con = s.next();
-                String em = s.next();
-                String ps = s.next();
-                TrainerDetails td = new TrainerDetails(name, u, g, a, con, em, ps);
-                tr.add(td);
+            while (s.hasNextLine()) {
+                String d=s.nextLine();
+                String [] input=d.split(" ");
+                String name=input[0];
+                
+                String use=input[1];
+                String gen=input[2];
+                String age=input[3];
+                String con=input[4];
+                String ema=input[5];
+                String ps=input[6];
+                
+      
+                //UserDetails us=new UserDetails(names,userName,password,gender,age,address);
+                //JOptionPane.showMessageDialog(null,u);
+                TrainerDetails obj = new TrainerDetails(name, use, gen, age, con, ema, ps);
+                //JOptionPane.showMessageDialog(null,u);
+                
+                TrainerL.put(use,ps);
+                TrainerO.put(use,obj);
+                
             }
         } catch (Exception e) {
             System.out.println("IO Exception");
