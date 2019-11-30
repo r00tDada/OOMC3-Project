@@ -64,9 +64,14 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="gender" min="-2" pref="267" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
-                              <Component id="edittrain" min="-2" pref="178" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="searchcustomer" min="-2" pref="194" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="edittrain" min="-2" pref="178" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="searchcustomer" min="-2" pref="194" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jScrollPane1" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
@@ -75,9 +80,7 @@
                       <Component id="jLabel6" min="-2" pref="132" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="ag" min="-2" pref="267" max="-2" attributes="0"/>
-                      <EmptySpace pref="85" max="32767" attributes="0"/>
-                      <Component id="box" min="-2" pref="430" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <EmptySpace min="25" pref="540" max="32767" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -91,9 +94,9 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
                           <Component id="jLabel1" alignment="3" min="-2" pref="51" max="-2" attributes="0"/>
@@ -124,18 +127,18 @@
                           <Component id="jLabel6" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                           <Component id="ag" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="145" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="244" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="edittrain" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                           <Component id="searchcustomer" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="box" min="-2" pref="139" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="139" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jButton3" min="-2" pref="48" max="-2" attributes="0"/>
               <EmptySpace pref="59" max="32767" attributes="0"/>
           </Group>
@@ -152,6 +155,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="name">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nameActionPerformed"/>
       </Events>
@@ -199,6 +205,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="gender">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="genderActionPerformed"/>
       </Events>
@@ -209,6 +218,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="user">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="userActionPerformed"/>
       </Events>
@@ -243,11 +255,6 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchcustomerActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="box">
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boxActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Edit Plan"/>
@@ -256,5 +263,20 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
       </Events>
     </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="box">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
   </SubComponents>
 </Form>
