@@ -18,8 +18,16 @@ public class UserDetails {
 
     static ArrayList<UserDetails>user=new ArrayList<UserDetails>();
     
-    private String name,last,us,gender,memberShip,email,password,address,train,sl;
+    private String name,last,us,gender,memberShip,email,password,address,train,sl,plan="Do Something";
     private int age,weight,height;
+
+    public String getPlan() {
+        return plan;
+    }
+
+    public void setPlan(String plan) {
+        this.plan = plan;
+    }
 
     public UserDetails(String name, String last, String us, String gender, String memberShip, String email, String password, String train,String sl,int age, int weight, int height,String address) {
         this.name = name;
@@ -90,11 +98,11 @@ public class UserDetails {
         this.gender = gender;
     }
 
-    public String getPlan() {
+    public String getMemberShip() {
         return memberShip;
     }
 
-    public void setPlan(String memberShip) {
+    public void setMemberShip(String memberShip) {
         this.memberShip = memberShip;
     }
 

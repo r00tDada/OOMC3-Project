@@ -11,6 +11,8 @@ import java.util.HashMap;
 import java.util.Scanner;
 import javax.swing.ButtonGroup;
 import javax.swing.JOptionPane;
+import static gymmanagement.GymManagement.*;
+import static gymmanagement.Trainerregister.loadtrainer;
 
 /**
  *
@@ -53,7 +55,6 @@ public class MainLogin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         pass = new javax.swing.JPasswordField();
         AdminLogin = new javax.swing.JRadioButton();
@@ -88,13 +89,6 @@ public class MainLogin extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Username");
-
-        jButton2.setText("Register");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
 
         jButton3.setText("Forgot your password");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -166,10 +160,7 @@ public class MainLogin extends javax.swing.JFrame {
                         .addGap(124, 124, 124))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(187, 187, 187))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(219, 219, 219))))
+                        .addGap(187, 187, 187))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,22 +184,15 @@ public class MainLogin extends javax.swing.JFrame {
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton3)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(35, 35, 35))
+                .addGap(81, 81, 81))
             .addGroup(layout.createSequentialGroup()
                 .addGap(106, 106, 106)
                 .addComponent(jLabel4)
-                .addContainerGap(128, Short.MAX_VALUE))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        new Trainerregister().setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -235,6 +219,7 @@ public class MainLogin extends javax.swing.JFrame {
                 } else if (TrainerLogin.isSelected()) {
                     if (TrainerL.containsKey(username)) {
                         if (TrainerL.get(username).equals(password)) {
+                            GymManagement.T = TrainerO.get(username);
                             new Trainer().setVisible(true);
                         } else {
                             JOptionPane.showMessageDialog(null, "Password Doesn't Match");
@@ -243,9 +228,10 @@ public class MainLogin extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "No Such Username Exist");
                     }
                 } else if (CustomerLogin.isSelected()) {
-                    if (TrainerL.containsKey(username)) {
-                        if (TrainerL.get(username).equals(password)) {
-//                            new UserFront().setVisible(true);
+                    if (CustomerL.containsKey(username)) {
+                        if (CustomerL.get(username).equals(password)) {
+                            U = CustomerO.get(username);
+                            new UserForm().setVisible(true);
                         } else {
                             JOptionPane.showMessageDialog(null, "Password Doesn't Match");
                         }
@@ -253,7 +239,7 @@ public class MainLogin extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "No Such Username Exist");
                     }
 
-                }                
+                }
 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e.getMessage());
@@ -273,7 +259,8 @@ public class MainLogin extends javax.swing.JFrame {
         GP1.add(CustomerLogin);
         AdminL.put("admin", "1234");
         UserLogin.load();
-        
+        loadtrainer();
+
     }//GEN-LAST:event_formWindowOpened
 
     private void AdminLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminLoginActionPerformed
@@ -328,7 +315,6 @@ public class MainLogin extends javax.swing.JFrame {
     private javax.swing.JRadioButton CustomerLogin;
     private javax.swing.JRadioButton TrainerLogin;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
