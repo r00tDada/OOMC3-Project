@@ -149,7 +149,7 @@ public class UserRegister extends javax.swing.JFrame {
 
         jTextField2.setText("jTextField2");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Ubuntu", 1, 20)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -474,8 +474,6 @@ public class UserRegister extends javax.swing.JFrame {
             if (obj == null) {
                 System.out.println("Whyyy " + trainer.getSelectedItem() + " . " + TrainerO.size());
             }
-            us.setCh(choice);
-
             us.setAssT(obj);
             if (choice == 1) {
                 obj.u1 -= 1;
@@ -500,6 +498,7 @@ public class UserRegister extends javax.swing.JFrame {
                 obj.g2 -= 1;
             }
 
+           
             try {
                 //String file=JOptionPane.showInputDialog("Enter file location");
                 FileWriter f = new FileWriter("src/gymmanagement/UserDetails.txt", true);
