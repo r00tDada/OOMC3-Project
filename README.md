@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 # Gym-Management
+=======
+# OOMC3-Project
+Gym-Management
+
+>>>>>>> 34868d707cbe5ae9ded23555060e425d1b4b0869
 Object Oriented Methodology Project-1
 
 Steps to run:
