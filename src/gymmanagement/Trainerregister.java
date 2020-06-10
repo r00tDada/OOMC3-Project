@@ -339,7 +339,7 @@ public class Trainerregister extends javax.swing.JFrame {
                         TrainerL.put(username, password);
                         TrainerO.put(username, obj);
                         FileWriter f = new FileWriter("src/gymmanagement/trainer", true);
-                        f.write("\n");
+                   
                         f.append(name + " " + username + " " + gen + " " + age + " " + contact + " " + ema + " " + password + "\n");
                         f.close();
                         if (gen.equalsIgnoreCase("male")) {

@@ -44,7 +44,7 @@ public class ChangeSlotUser extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         slot.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "(M1)Unisex", "(M2)Male", "(M3)Female", "(E1)Unisex", "(E2)Male", "(E3)Female" }));
         slot.addActionListener(new java.awt.event.ActionListener() {

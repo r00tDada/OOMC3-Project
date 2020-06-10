@@ -146,6 +146,11 @@ public class AdminFront extends javax.swing.JFrame {
         jMenu4.add(jMenuItem9);
 
         jMenuItem10.setText("Delete");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
         jMenu4.add(jMenuItem10);
 
         jMenuBar1.add(jMenu4);
@@ -192,17 +197,17 @@ public class AdminFront extends javax.swing.JFrame {
     private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
         JFrame f = new JFrame();
-        String data[][] = new String [EList.size()][2];
-        for(int i=0;i<EList.size();i++){
-            data[i][0]=EList.get(i).name;
-            data[i][1]=Integer.toString(EList.get(i).getQuantity());
+        String data[][] = new String[EList.size()][2];
+        for (int i = 0; i < EList.size(); i++) {
+            data[i][0] = EList.get(i).name;
+            data[i][1] = Integer.toString(EList.get(i).getQuantity());
         }
         String column[] = {"Name", "Quantity"};
         JTable jt = new JTable(data, column);
         jt.setBounds(30, 40, 200, 300);
         JScrollPane sp = new JScrollPane(jt);
         f.add(sp);
-        
+
         f.setSize(300, 200);
         f.setVisible(true);
     }//GEN-LAST:event_jMenuItem4ActionPerformed
@@ -228,41 +233,71 @@ public class AdminFront extends javax.swing.JFrame {
 
     private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
         // TODO add your handling code here:
-        String n= JOptionPane.showInputDialog("Please enter the Username of the trainer to be deleted");
-        if(TrainerL.containsKey(n)){
-             deletetrainer(n);
-            JOptionPane.showMessageDialog(null,"Deleted Successfully");
-        }
-        else{
-            JOptionPane.showMessageDialog(null,"Trainer with this username doesn't exists");
+        String n = JOptionPane.showInputDialog("Please enter the Username of the trainer to be deleted");
+        if (TrainerL.containsKey(n)) {
+            deletetrainer(n);
+            JOptionPane.showMessageDialog(null, "Deleted Successfully");
+        } else {
+            JOptionPane.showMessageDialog(null, "Trainer with this username doesn't exists");
         }
     }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
-         String n= JOptionPane.showInputDialog("Please enter the Username of the trainer");
-        if(TrainerL.containsKey(n)){
-             T=TrainerO.get(n);
-             new Trainer().setVisible(true);
-            JOptionPane.showMessageDialog(null,"Search Successfully");
-        }
-        else{
-            JOptionPane.showMessageDialog(null,"Trainer with this username doesn't exists");
+        String n = JOptionPane.showInputDialog("Please enter the Username of the trainer");
+        if (TrainerL.containsKey(n)) {
+            T = TrainerO.get(n);
+            new Trainer().setVisible(true);
+            JOptionPane.showMessageDialog(null, "Search Successfully");
+        } else {
+            JOptionPane.showMessageDialog(null, "Trainer with this username doesn't exists");
         }
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
-         String n= JOptionPane.showInputDialog("Please enter the Username of the trainer");
-        if(CustomerL.containsKey(n)){
-             U=CustomerO.get(n);
-             new UserForm().setVisible(true);
-            JOptionPane.showMessageDialog(null,"Search Successfully");
-        }
-        else{
-            JOptionPane.showMessageDialog(null,"Customer with this username doesn't exists");
+        String n = JOptionPane.showInputDialog("Please enter the Username of the trainer");
+        if (CustomerL.containsKey(n)) {
+            U = CustomerO.get(n);
+            new UserForm().setVisible(true);
+            JOptionPane.showMessageDialog(null, "Search Successfully");
+        } else {
+            JOptionPane.showMessageDialog(null, "Customer with this username doesn't exists");
         }
     }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        // TODO add your handling code here:
+        String n = JOptionPane.showInputDialog("Please enter the Username of the Customer");
+        if (CustomerL.containsKey(n)) {
+            
+            U = CustomerO.get(n);
+            int choice=U.getCh();
+            U.getAssT().Cust.remove(n);
+            if(choice==1){
+                U.getAssT().u1+=1;
+            }
+            if(choice==2){
+                U.getAssT().b1+=1;
+            }
+            if(choice==3){
+                U.getAssT().g1+=1;
+            }
+            if(choice==4){
+                U.getAssT().u2+=1;
+            }
+            if(choice==5){
+                U.getAssT().b2+=1;
+            }
+            if(choice==6){
+                U.getAssT().g2+=1;
+            }
+            new UserForm().setVisible(true);
+            JOptionPane.showMessageDialog(null, "Delete Successfully");
+        } else {
+            JOptionPane.showMessageDialog(null, "Customer with this username doesn't exists");
+        }
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
 
     /**
      * @param args the command line arguments
